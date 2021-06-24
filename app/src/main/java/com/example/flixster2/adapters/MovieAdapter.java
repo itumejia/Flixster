@@ -1,6 +1,7 @@
 package com.example.flixster2.adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +76,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         public void bind(Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
-            Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
+            String imageUrl;
+            int placeholder;
+
+
+            if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                imageUrl = movie.getBackdropPath();
+                placeholder= R.drawable.flicks_backdrop_placeholder;
+            } else{
+                imageUrl = movie.getPosterPath();
+                placeholder = R.drawable.flicks_movie_placeholder;
+            }
+
+            Glide.with(context)
+                    .load(imageUrl)
+                    .placeholder(placeholder)
+                    .into(ivPoster);
         }
     }
 }
