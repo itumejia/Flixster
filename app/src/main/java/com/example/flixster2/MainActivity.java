@@ -11,6 +11,7 @@ import android.view.View;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster2.adapters.MovieAdapter;
+import com.example.flixster2.databinding.ActivityMainBinding;
 import com.example.flixster2.models.Movie;
 
 import org.json.JSONArray;
@@ -24,7 +25,7 @@ import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=38658f4199dd7fb175701cfd65ac917d";
+
     public static final String TAG = "MainActivity";
 
     List<Movie> movies = new ArrayList<>();
@@ -32,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        String NOW_PLAYING_URL = String.format("https://api.themoviedb.org/3/movie/now_playing?api_key=%s", getString(R.string.movie_db_api_key));
 
         //Set the Recycle View up with its adapter
-        RecyclerView rmMovies = findViewById(R.id.rvMovies);
+        RecyclerView rmMovies = binding.rvMovies;
         MovieAdapter movieAdapter = new MovieAdapter(this, movies);
         rmMovies.setAdapter(movieAdapter);
         rmMovies.setLayoutManager(new LinearLayoutManager(this));

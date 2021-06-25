@@ -2,11 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingStart="15dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp">
 
     <ImageView
-        android:id="@+id/ivPoster"
+        android:id="@+id/ivDetails"
         android:layout_width="350dp"
         android:layout_height="195dp"
         android:layout_alignParentStart="true"
@@ -20,8 +25,9 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_toEndOf="@+id/ivPoster"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/ivDetails"
+        android:textColor="#FAF8F8"
         android:textSize="24sp"
         tools:text="A Quiet Place Part II" />
 
@@ -30,8 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/ivPoster"
+        android:layout_toEndOf="@+id/ivDetails"
+        android:textColor="#DAD8D8"
         tools:text="Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path." />
 </RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailsActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#292929"
+        android:clickable="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDetailsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-black"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="42sp"
+                tools:layout_editor_absoluteX="65dp"
+                tools:layout_editor_absoluteY="28dp"
+                tools:text="A Quiet Place Part II" />
+
+            <ImageView
+                android:id="@+id/ivDetails"
+                android:layout_width="350dp"
+                android:layout_height="195dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="40dp"
+                android:scaleType="center"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvDetailsOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:textAlignment="center"
+                android:textColor="#CFCECE"
+                android:textSize="17sp"
+                tools:text="Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path." />
+
+            <RatingBar
+                android:id="@+id/rbDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:progressBackgroundTint="#F8F6F6"
+                android:progressTint="#EA857D"
+                android:rating="0"
+                android:secondaryProgressTint="#E8A7A7" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
